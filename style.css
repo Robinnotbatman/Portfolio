@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+body{
+  margin: 0;
+  background-color: white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circular-menu{
+  position: auto;
+  /*resize the menu by changing the value below*/
+  font-size: 15px;
+  border-radius: 50%;
+}
+.inner-circle{
+  content: '';
+  background: black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  width: 4em;
+  height: 4.68em;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inner-circle i{
+  color: white;
+  font-size: 2em;
+}
+.panel{
+  background: rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+  width: 15em;
+  height: 13em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: white;
+  transform-origin: top center;
+  transition: width 0.1s, height 0.1s, opacity 0.1s;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  backdrop-filter: blur(2px);
+}
+.panel:nth-child(1){
+  transform: translateX(-50%);
+}
+.panel:nth-child(1) i{
+  transform: translateX(-50%);
+}
+.panel:nth-child(2){
+  transition-delay: 0.1s;
+  transform: translateX(-50%) rotate(60deg);
+}
+.panel:nth-child(2) i{
+  transform: translateX(-50%) rotate(-60deg);
+}
+.panel:nth-child(3){
+  transition-delay: 0.2s;
+  transform: translateX(-50%) rotate(120deg);
+}
+.panel:nth-child(3) i{
+  transform: translateX(-50%) rotate(-120deg);
+}
+.panel:nth-child(4){
+  transition-delay: 0.3s;
+  transform: translateX(-50%) rotate(180deg);
+}
+.panel:nth-child(4) i{
+  transform: translateX(-50%) rotate(-180deg);
+}
+.panel:nth-child(5){
+  transition-delay: 0.4s;
+  transform: translateX(-50%) rotate(240deg);
+}
+.panel:nth-child(5) i{
+  transform: translateX(-50%) rotate(-240deg);
+}
+.panel:nth-child(6){
+  transition-delay: 0.5s;
+  transform: translateX(-50%) rotate(300deg);
+}
+.panel:nth-child(6) i{
+  transform: translateX(-50%) rotate(-300deg);
+}
+.panel:hover{
+  background: rgba(255,140,0, 1);
+}
+.panel i{
+  font-size: 3em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+/*hide initially*/
+.panel{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/*show on hover*/
+.circular-menu:hover .panel{
+  opacity: 1;
+  width: 15em;
+  height: 13em;
+}
